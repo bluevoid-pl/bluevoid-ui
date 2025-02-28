@@ -31,10 +31,9 @@ export default defineConfig({
   plugins: [
     react(),
     tsconfigPaths(),
-    dts({ tsconfigPath: './tsconfig.app.json', }),
+    dts({ tsconfigPath: './tsconfig.app.json', exclude: ['src'] }),
   ],
   build: {
-    minify: false,
     lib: {
       entry: entries,
       name: '@bluevoid/ui',
@@ -61,22 +60,12 @@ export default defineConfig({
         'react-hook-form',
         'react-resizable-panels',
         'react',
-        'react/jsx-runtime', 
+        'react/jsx-runtime',
         'recharts',
         'tinycolor2',
       ],
       output: {
-        // chunkFileNames: 'chunks/[name]-[hash].js', // Avoid name collisions
-
-        // entryFileNames(chunkInfo) {
-        //   if (chunkInfo.isDynamicEntry){
-        //     return 'bluevoid-ui-dyn.js';
-        //   }
-        //   if (chunkInfo.name.startsWith('components/ui/')) {
-        //     return `${chunkInfo.name}.js`;
-        //   }
-        //   return 'bluevoid-ui.js';
-        // },
+        chunkFileNames: 'internal-chunk-[hash].js',
       },
       plugins: [preserveDirectives()],
     },
