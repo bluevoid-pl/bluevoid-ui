@@ -238,6 +238,8 @@ function DropdownMenuSubContent({
 	);
 }
 
+export type Checked = boolean | "indeterminate";
+
 export {
 	DropdownMenu,
 	DropdownMenuPortal,
