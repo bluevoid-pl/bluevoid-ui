@@ -1,6 +1,5 @@
 "use client";
 
-import type * as React from "react";
 import { useTheme } from "next-themes";
 import { Toaster as Sonner } from "sonner";
 export type {
@@ -28,9 +27,9 @@ const Toaster = ({ ...props }: ToasterProps) => {
 						"group toast group-[.toaster]:bg-background group-[.toaster]:text-foreground group-[.toaster]:border-border group-[.toaster]:shadow-lg",
 					description: "group-[.toast]:text-muted-foreground",
 					actionButton:
-						"group-[.toast]:bg-primary group-[.toast]:text-primary-foreground",
+						"group-[.toast]:bg-primary group-[.toast]:text-primary-foreground font-medium",
 					cancelButton:
-						"group-[.toast]:bg-muted group-[.toast]:text-muted-foreground",
+						"group-[.toast]:bg-muted group-[.toast]:text-muted-foreground font-medium",
 				},
 			}}
 			{...props}

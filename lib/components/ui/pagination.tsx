@@ -70,7 +70,7 @@ const PaginationPrevious = ({
 }: React.ComponentProps<typeof PaginationLink>) => (
 	<Button
 		variant="ghost"
-		size="icon-xs"
+		size="icon"
 		aria-label="Go to previous page"
 		className="text-primary hover:text-primary disabled:text-stone-500"
 		disabled={isActive}
@@ -89,7 +89,7 @@ const PaginationNext = ({
 }: React.ComponentProps<typeof PaginationLink>) => (
 	<Button
 		variant="ghost"
-		size="icon-xs"
+		size="icon"
 		aria-label="Go to next page"
 		className="text-primary hover:text-primary disabled:text-stone-500"
 		disabled={isActive}
