@@ -1,1 +1,1 @@
-export * from "@radix-ui/react-visually-hidden"
+export * from "@radix-ui/react-visually-hidden";

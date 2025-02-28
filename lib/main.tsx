@@ -1,2 +1,2 @@
-"use client"
-export * from "./hooks"
+"use client";
+export * from "./hooks";
