@@ -17,7 +17,7 @@ const uiComponents = fg.sync('lib/components/ui/**/*.tsx').reduce((entries, file
 }, {} as Record<string, string>);
 
 // Add main entry for the rest of the library
-const entries = {
+export const entries = {
   ...uiComponents,
   'bluevoid-ui': resolve(__dirname, 'lib/main.tsx'),
   'utils': resolve(__dirname, 'lib/utils.ts'),
