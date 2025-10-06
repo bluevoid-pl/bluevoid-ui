@@ -325,7 +325,12 @@ function ShadCN() {
 			{/* <TooltipProvider> */}
 			{/* <ThemeToggle /> */}
 			{UIElements.map((val, index) => (
-				<Card key={`${uuid}${index}:`}>
+				<Card
+					key={`${uuid}${
+						// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
+						index
+					}:`}
+				>
 					<CardHeader>
 						<CardTitle>{val.title}</CardTitle>
 						{val.description !== undefined && (

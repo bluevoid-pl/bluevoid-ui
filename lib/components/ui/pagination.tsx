@@ -149,14 +149,24 @@ function Pagination({
 				{range.map((page, index) => {
 					if (page === "dots") {
 						return (
-							<PaginationItem key={`${uuid}_${index}`}>
+							<PaginationItem
+								key={`${uuid}_${
+									// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
+									index
+								}`}
+							>
 								<PaginationEllipsis />
 							</PaginationItem>
 						);
 					}
 
 					return (
-						<PaginationItem key={`${uuid}_${index}`}>
+						<PaginationItem
+							key={`${uuid}_${
+								// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
+								index
+							}`}
+						>
 							<PaginationLink
 								aria-current={active === page ? "page" : undefined}
 								isActive={active === page}

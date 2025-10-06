@@ -1,13 +1,14 @@
 "use client";
 
-import type * as React from "react";
+import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 import { IconChevronLeft, IconChevronRight, IconX } from "@tabler/icons-react";
+import type * as React from "react";
+import { type ChangeEvent, useId, useRef, useState } from "react";
 import {
 	DayPicker,
 	type DropdownOption,
 	type DropdownProps,
 } from "react-day-picker";
-
 import { cn } from "../../utils";
 import { Button, buttonVariants } from "./button";
 import {
@@ -17,17 +18,15 @@ import {
 	DialogTitle,
 	DialogTrigger,
 } from "./dialog";
-import { type ChangeEvent, useId, useRef, useState } from "react";
-import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 
 function CalendarDropdown({
 	options,
 	value,
 	...moreProps
-}: DropdownProps & { container: HTMLDivElement | null }) {
+}: Partial<DropdownProps> & { container: HTMLDivElement | null }) {
 	const selectedOption = options?.find(({ value: v }) => v === value);
 	const is_month_select = Number.isNaN(
-		Number.parseInt(selectedOption?.label as any),
+		Number.parseInt(selectedOption?.label as any, 10),
 	);
 	if (options === undefined) return null;
 	const Elem = is_month_select ? CalendarMonthDropdown : CalendarYearDropdown;
@@ -48,7 +47,7 @@ function CalendarMonthDropdown({
 	container,
 	selectedOption,
 	// ...moreProps
-}: DropdownProps & {
+}: Partial<DropdownProps> & {
 	container: HTMLDivElement | null;
 	selectedOption: DropdownOption;
 }) {
@@ -116,7 +115,7 @@ function CalendarYearDropdown({
 	container,
 	selectedOption,
 	// ...moreProps
-}: DropdownProps & {
+}: Partial<DropdownProps> & {
 	container: HTMLDivElement | null;
 	selectedOption: DropdownOption;
 }) {
@@ -226,6 +225,12 @@ function CalendarYearDropdown({
 		</Dialog>
 	);
 }
+const Chevron = ({ ...props }) =>
+	props.orientation === "left" ? (
+		<IconChevronLeft className="size-4" />
+	) : (
+		<IconChevronRight className="size-4" />
+	);
 
 export type CalendarProps = React.ComponentProps<typeof DayPicker>;
 
@@ -236,6 +241,12 @@ function Calendar({
 	...props
 }: CalendarProps) {
 	const ref = useRef<HTMLDivElement>(null);
+
+	// biome-ignore lint/correctness/noNestedComponentDefinitions: this needs ref
+	const Dropdown = ({ ...props }) => (
+		<CalendarDropdown {...props} container={ref.current} />
+	);
+
 	return (
 		<div className="relative" ref={ref}>
 			<DayPicker
@@ -254,11 +265,11 @@ function Calendar({
 					nav: "flex items-center absolute inset-x-0",
 					button_previous: cn(
 						buttonVariants({ variant: "outline" }),
-						"size-7 bg-transparent p-0 opacity-50 hover:opacity-100 absolute z-10 left-2 top-1",
+						"absolute top-1 left-2 z-10 size-7 bg-transparent p-0 opacity-50 hover:opacity-100",
 					),
 					button_next: cn(
 						buttonVariants({ variant: "outline" }),
-						"size-7 bg-transparent p-0 opacity-50 hover:opacity-100 absolute z-10 right-2 top-1",
+						"absolute top-1 right-2 z-10 size-7 bg-transparent p-0 opacity-50 hover:opacity-100",
 					),
 					month_grid: "w-full border-collapse space-y-1",
 					weekdays: "flex space-x-1",
@@ -269,7 +280,7 @@ function Calendar({
 					day: cn(
 						"relative p-0 text-center text-sm focus-within:relative focus-within:z-20 aria-selected:bg-primary/50 aria-selected:[&.day-outside]:bg-accent/50",
 						props.mode === "range"
-							? "[&.day-range-end]:rounded-r-md [&.day-range-start]:rounded-l-md aria-selected:[&.day-range-end]:rounded-r-md first:aria-selected:rounded-l-md last:aria-selected:rounded-r-md"
+							? "last:aria-selected:rounded-r-md first:aria-selected:rounded-l-md [&.day-range-end]:rounded-r-md aria-selected:[&.day-range-end]:rounded-r-md [&.day-range-start]:rounded-l-md"
 							: "aria-selected:rounded-md",
 					),
 					day_button: cn(
@@ -292,15 +303,8 @@ function Calendar({
 					...classNames,
 				}}
 				components={{
-					Chevron: ({ ...props }) =>
-						props.orientation === "left" ? (
-							<IconChevronLeft className="size-4" />
-						) : (
-							<IconChevronRight className="size-4" />
-						),
-					Dropdown: ({ ...props }) => (
-						<CalendarDropdown {...props} container={ref.current} />
-					),
+					Chevron,
+					Dropdown,
 				}}
 				{...props}
 			/>

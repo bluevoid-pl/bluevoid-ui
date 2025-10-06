@@ -30,9 +30,9 @@ function ThemeToggle() {
 				</Button>
 			</DropdownMenuTrigger>
 			<DropdownMenuContent align="end">
-				{colorSchemes.map((color, index) => (
+				{colorSchemes.map((color) => (
 					<DropdownMenuItem
-						key={`${uuid}:${index}`}
+						key={`${uuid}:${color}`}
 						onClick={() => setColorScheme?.(color)}
 					>
 						{color}
