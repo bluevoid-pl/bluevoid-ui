@@ -115,7 +115,7 @@ function TestDrawer() {
 							</div>
 							<div className="mt-3 h-[120px]">
 								<img
-									src="/assets/White%20Tshirt%20-%201600x1571.png"
+									src="/logo.png"
 									alt="test"
 									className="h-full w-full rounded-md bg-red-200 object-cover"
 								/>
