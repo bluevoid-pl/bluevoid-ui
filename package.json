@@ -263,9 +263,9 @@
 	"devDependencies": {
 		"@biomejs/biome": "^2.2.5",
 		"@hookform/resolvers": "^5.2.2",
-		"@mantine/hooks": "^8.3.3",
+		"@mantine/hooks": "^8.3.4",
 		"@tailwindcss/postcss": "^4.1.14",
-		"@types/node": "^24.7.0",
+		"@types/node": "^24.7.1",
 		"@types/react": "^19.2.2",
 		"@types/react-dom": "^19.2.1",
 		"@types/tinycolor2": "^1.4.6",
@@ -278,7 +278,7 @@
 		"input-otp": "^1.4.2",
 		"postcss": "^8.5.6",
 		"react": "^19.2.0",
-		"react-day-picker": "9.11.0",
+		"react-day-picker": "9.11.1",
 		"react-dom": "^19.2.0",
 		"react-hook-form": "^7.64.0",
 		"react-resizable-panels": "^3.0.6",
@@ -305,14 +305,14 @@
 		"date-fns": "^4.1.0",
 		"embla-carousel-react": "^8.6.0",
 		"input-otp": "^1.4.2",
-		"react-day-picker": "9.11.0",
+		"react-day-picker": "9.11.1",
 		"react-hook-form": "^7.64.0",
 		"react-resizable-panels": "^3.0.6",
-		"recharts": "^2.15.4",
+		"recharts": "^3.2.1",
 		"tinycolor2": "^1.6.0"
 	},
 	"publishConfig": {
 		"access": "public"
 	},
-	"packageManager": "pnpm@10.18.1+sha512.77a884a165cbba2d8d1c19e3b4880eee6d2fcabd0d879121e282196b80042351d5eb3ca0935fa599da1dc51265cc68816ad2bddd2a2de5ea9fdf92adbec7cd34"
+	"packageManager": "pnpm@10.18.2+sha512.9fb969fa749b3ade6035e0f109f0b8a60b5d08a1a87fdf72e337da90dcc93336e2280ca4e44f2358a649b83c17959e9993e777c2080879f3801e6f0d999ad3dd"
 }
