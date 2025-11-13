@@ -8,11 +8,11 @@ function TestCheckbox() {
 		<>
 			<div className="flex items-center gap-2">
 				<Checkbox id="checkbox_unchecked" />
-				<Label label="Unchecked" htmlFor="checkbox_unchecked" />
+				<Label htmlFor="checkbox_unchecked">Unchecked</Label>
 			</div>
 			<div className="flex items-center gap-2">
 				<Checkbox id="checkbox_checked" checked />
-				<Label label="Checked" htmlFor="checkbox_checked" />
+				<Label htmlFor="checkbox_checked">Checked</Label>
 			</div>
 		</>
 	);

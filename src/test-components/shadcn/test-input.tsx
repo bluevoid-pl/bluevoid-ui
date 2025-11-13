@@ -9,7 +9,7 @@ function TestInput() {
 				<Input type="email" placeholder="Email" />
 			</div>
 			<div className="grid w-full max-w-sm items-center gap-1.5">
-				<Label label="Picture" htmlFor="picture" />
+				<Label htmlFor="picture">Picture</Label>
 				<Input id="picture" type="file" />
 			</div>
 			<div>

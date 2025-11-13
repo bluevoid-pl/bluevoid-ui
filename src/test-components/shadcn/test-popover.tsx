@@ -19,7 +19,7 @@ function TestPopover() {
 					</div>
 					<div className="grid gap-2">
 						<div className="grid grid-cols-3 items-center gap-4">
-							<Label label="Width" htmlFor="width" />
+							<Label htmlFor="width">Width</Label>
 							<Input
 								id="width"
 								defaultValue="100%"
@@ -27,7 +27,7 @@ function TestPopover() {
 							/>
 						</div>
 						<div className="grid grid-cols-3 items-center gap-4">
-							<Label label="Max. width" htmlFor="maxWidth" />
+							<Label htmlFor="maxWidth">Max. width</Label>
 							<Input
 								id="maxWidth"
 								defaultValue="300px"
@@ -35,7 +35,7 @@ function TestPopover() {
 							/>
 						</div>
 						<div className="grid grid-cols-3 items-center gap-4">
-							<Label label="Height" htmlFor="height" />
+							<Label htmlFor="height">Height</Label>
 							<Input
 								id="height"
 								defaultValue="25px"
@@ -43,7 +43,7 @@ function TestPopover() {
 							/>
 						</div>
 						<div className="grid grid-cols-3 items-center gap-4">
-							<Label label="Max. height" htmlFor="maxHeight" />
+							<Label htmlFor="maxHeight">Max. height</Label>
 							<Input
 								id="maxHeight"
 								defaultValue="none"
