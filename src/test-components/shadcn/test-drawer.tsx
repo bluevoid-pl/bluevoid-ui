@@ -54,7 +54,7 @@ function TestDrawer() {
 	return (
 		<>
 			<Drawer>
-				<DrawerTrigger asChild>
+				<DrawerTrigger asChild>adju
 					<Button variant="outline">Open Drawer</Button>
 				</DrawerTrigger>
 				<DrawerContent>
@@ -64,7 +64,7 @@ function TestDrawer() {
 					</DrawerHeader>
 					<DrawerFooter>
 						<Button>Submit</Button>
-						<DrawerClose>
+						<DrawerClose asChild>
 							<Button variant="outline">Cancel</Button>
 						</DrawerClose>
 					</DrawerFooter>
@@ -151,7 +151,7 @@ function TestDrawer() {
 			) : (
 				<Drawer open={open} onOpenChange={setOpen}>
 					<DrawerTrigger asChild>
-						<Button variant="outline">Edit Profile</Button>
+						<Button variant="outline">Responsive Drawer</Button>
 					</DrawerTrigger>
 					<DrawerContent className="h-5/6">
 						<DrawerHeader className="text-left">
